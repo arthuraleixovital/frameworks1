@@ -1,7 +1,7 @@
 <script>
     let emailuser = $state("");
     let emailsfiltrados = $state("");
-    let titpostemailfiltrados = $state(null);
+    let titpostemailfiltrados = $state("");
 
     async function buscuseremail() {
         let resposta6 = await fetch(`https://jsonplaceholder.typicode.com/users`);

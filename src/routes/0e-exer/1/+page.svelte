@@ -1,5 +1,4 @@
 <script>
-	import { npm_config_engine_strict } from "$env/static/private";
 
     let seg = $state(10);
     let tempo = 0;
@@ -24,12 +23,16 @@
 
     function soltarconfete(){
         confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 }
-        })
+            particleCount: 200, // Quantidade de partículas
+            spread: 70, // Abertura do confete
+            origin: { y: 0.6 } // Origem do confete (altura relativa)
+        });
     }
 </script>
+
+<svelte:head>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</svelte:head>
 
 <div class="container">
     <div class="card">
@@ -40,7 +43,7 @@
         <button class="btn btn-primary" onclick={transformar} disabled={bloqueado}>Iniciar Contagem</button>
         <br>
         {#if contador <= 0}
-        Parábens
+        <h1><b>Parábens</b></h1>
         {/if}
     </div>
 </div>
@@ -52,7 +55,7 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background-color: #f8f9fa;
+        background-color: #ffffff;
     }
     .card {
         padding: 20px;
